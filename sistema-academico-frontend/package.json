@@ -1,0 +1,21 @@
+﻿{
+  "name": "sistema-academico-frontend",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "start": "ng serve --host 0.0.0.0 --port 4200",
+    "build": "ng build",
+    "serve": "ng serve"
+  },
+  "dependencies": {
+    "@angular/common": "^18.0.0",
+    "@angular/core": "^18.0.0",
+    "@angular/platform-browser": "^18.0.0",
+    "@angular/router": "^18.0.0"
+  },
+  "devDependencies": {
+    "@angular/cli": "^18.0.0",
+    "@angular-devkit/build-angular": "^18.0.0",
+    "typescript": "~5.4.0"
+  }
+}
