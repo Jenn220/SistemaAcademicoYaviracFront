@@ -149,9 +149,9 @@
           <td>Coordinador: {{ informe.firmas.fecha_firma_coordinador ? 'Ing. Raúl Páez' : 'Pendiente' }}</td>
         </tr>
         <tr>
-          <td>Fecha: {{ informe.firmas.fecha_firma_docente ?? 'Pendiente' }}</td>
-          <td>Fecha: {{ informe.firmas.fecha_firma_coordinador ?? 'Pendiente' }}</td>
-        </tr>
+  <td>Fecha: {{ fechaActual | date:'dd-MM-yyyy' }}</td>
+  <td>Fecha: {{ fechaActual | date:'dd-MM-yyyy' }}</td>
+</tr>
       </table>
     </section>
 

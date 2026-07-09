@@ -8,4 +8,11 @@ export const routes: Routes = [
         (m) => m.InformeFinalComponent,
       ),
   },
+  {
+    path: 'aceptacion-notas',
+    loadComponent: () =>
+      import('./modules/portafolio-docente/pages/aceptacion-notas/aceptacion-notas.component').then(
+        (m) => m.AceptacionNotasComponent,
+      ),
+  },
 ];
