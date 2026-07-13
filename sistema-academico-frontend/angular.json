@@ -8,29 +8,24 @@
       "sourceRoot": "src",
       "architect": {
         "build": {
-          "builder": "@angular/build:application",
+          "builder": "@angular-devkit/build-angular:browser",
           "options": {
             "outputPath": "dist",
             "index": "src/index.html",
-            "browser": "src/main.ts",
-            "polyfills": ["zone.js"],
+            "main": "src/main.ts",
+            "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.json",
             "outputHashing": "all",
-            "assets":["src/assets"],
             "inlineStyleLanguage": "scss"
           }
         },
         "serve": {
-          "builder": "@angular/build:dev-server",
+          "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "buildTarget": "sistema-academico-frontend:build",
-            "proxyConfig": "proxy.conf.json"
+            "buildTarget": "sistema-academico-frontend:build"
           }
         }
       }
     }
-  },
-  "cli": {
-    "analytics": false
   }
 }
