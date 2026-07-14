@@ -1,1 +1,16 @@
-body{font-family:Arial,sans-serif;margin:0;padding:0;}
+@use './app/shared/styles/index';
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #F4F6F9; /* Fondo gris claro neutral para todo el sistema */
+}
+
+/* Si los documentos de la fase práctica necesitan un fondo o comportamiento especial de impresión,
+   es mejor usar una clase contenedora para que no altere tu portafolio */
+.document-container {
+  @media print {
+    background: white;
+  }
+}
