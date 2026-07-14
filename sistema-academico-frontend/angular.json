@@ -3,7 +3,7 @@
   "version": 1,
   "cli": {
     "packageManager": "npm",
-    "analytics": "b4648a8f-a9e2-45fb-828b-3f63ae0b1a15"
+    "analytics": false
   },
   "newProjectRoot": "projects",
   "projects": {
@@ -21,7 +21,12 @@
         "build": {
           "builder": "@angular/build:application",
           "options": {
+            "outputPath": "dist",
+            "index": "src/index.html",
             "browser": "src/main.ts",
+            "polyfills": [
+              "zone.js"
+            ],
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
@@ -71,6 +76,10 @@
         },
         "serve": {
           "builder": "@angular/build:dev-server",
+          "options": {
+            "buildTarget": "sistema-academico-frontend:build",
+            "proxyConfig": "proxy.conf.json"
+          },
           "configurations": {
             "production": {
               "buildTarget": "sistema-academico-frontend:build:production"

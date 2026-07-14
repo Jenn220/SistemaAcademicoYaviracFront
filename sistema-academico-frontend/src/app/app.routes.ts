@@ -10,7 +10,7 @@ import { ListaPortafolio } from './modules/portafolio-docente/pages/lista-portaf
 import { DetallePortafolio } from './modules/portafolio-docente/pages/detalle-portafolio/detalle-portafolio';
 
 export const routes: Routes = [
-  // Puedes dejar la raíz apuntando al catálogo de documentos o a tu dashboard principal
+  // --- RUTAS DE FASE PRÁCTICA ---
   {
     path: '',
     component: CatalogoDocumentos
@@ -24,7 +24,7 @@ export const routes: Routes = [
     component: RegistroAsistencia
   },
   
-  // --- TUS RUTAS DE PORTAFOLIO DOCENTE ---
+  // --- RUTAS DE PORTAFOLIO DOCENTE (DESDE HEAD) ---
   {
     path: 'portafolio',
     component: ListaPortafolio
@@ -32,6 +32,22 @@ export const routes: Routes = [
   {
     path: 'portafolio/detalle',
     component: DetallePortafolio
+  },
+
+  // --- RUTAS DE PORTAFOLIO DOCENTE (DESDE MAIN) ---
+  {
+    path: 'portafolio-docente',
+    loadComponent: () =>
+      import('./modules/portafolio-docente/pages/detalle-portafolio/informe-final.component').then(
+        (m) => m.InformeFinalComponent,
+      ),
+  },
+  {
+    path: 'aceptacion-notas',
+    loadComponent: () =>
+      import('./modules/portafolio-docente/pages/aceptacion-notas/aceptacion-notas.component').then(
+        (m) => m.AceptacionNotasComponent,
+      ),
   },
 
   // El comodín de redirección SIEMPRE debe ir al último para que no capture las rutas buenas
