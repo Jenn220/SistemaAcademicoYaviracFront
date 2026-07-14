@@ -1,13 +1,12 @@
-# ---- Etapa 1: build ----
-FROM node:20-alpine AS build
+﻿FROM node:20-alpine
 WORKDIR /app
-COPY package.json package-lock.json ./
-RUN npm ci
+COPY package.json ./
+RUN npm install
 COPY . .
-RUN npm run build
+ENV PORT=4200
+EXPOSE 4200
+CMD ["npm","start"]
 
-# ---- Etapa 2: runtime (Nginx) ----
-FROM nginx:alpine AS runtime
-COPY --from=build /app/dist/browser /usr/share/nginx/html
-COPY nginx.conf /etc/nginx/conf.d/default.conf
-EXPOSE 80
+
+
+
