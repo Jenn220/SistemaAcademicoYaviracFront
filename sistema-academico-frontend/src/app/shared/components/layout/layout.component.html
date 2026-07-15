@@ -1,65 +1,104 @@
 <div class="layout">
-  <header class="topbar">
-    <div class="top-left">
-      <div class="menu-icon">
-        <img src="assets/icons/menu2.png" alt="Menú">
+
+  <aside class="sidebar">
+
+    <h2>Sistema Académico</h2>
+
+    <div class="menu">
+
+      <div class="menu-title">
+        Inicio
       </div>
-      <div class="logo">
-        <img src="assets/icons/logo.png" alt="Logo Yavirac">
+
+      <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+        🏠 Bienvenida
+      </a>
+
+
+      <div class="menu-title">
+        Portafolio Docente
       </div>
+
+      <a routerLink="/portafolio-docente"
+         routerLinkActive="active"
+         [routerLinkActiveOptions]="{exact:true}">
+
+        Informe Final
+
+      </a>
+
+      <a routerLink="/portafolio-docente/aceptacion-notas"
+         routerLinkActive="active">
+
+        Aceptación de Notas
+
+      </a>
+
+
+
+      <div class="menu-title">
+        Fase Práctica
+      </div>
+
+      <a routerLink="/fase-practica"
+         routerLinkActive="active"
+         [routerLinkActiveOptions]="{exact:true}">
+
+        Catálogo Documentos
+
+      </a>
+
+      <a routerLink="/fase-practica/carta-compromiso"
+         routerLinkActive="active">
+
+        Carta Compromiso
+
+      </a>
+
+      <a routerLink="/fase-practica/registro-asistencia"
+         routerLinkActive="active">
+
+        Registro Asistencia
+
+      </a>
+
+
+
+      <div class="menu-title">
+        Otros módulos
+      </div>
+
+      <a routerLink="/vinculacion">
+
+        Vinculación
+
+      </a>
+      <a routerLink="/vinculacion/actividades">
+    Actividades
+</a>
+
+<a routerLink="/vinculacion/asistencia">
+    Asistencia Tutor
+</a>
+
+<a routerLink="/vinculacion/informes">
+    Informes
+</a>
+
+<a routerLink="/vinculacion/nuevo">
+    Nuevo Proyecto
+</a>
+
     </div>
 
-    <div class="top-right">
-      <div class="notification">
-        <img src="assets/icons/campana.png" alt="Notificaciones">
-      </div>
-      <div class="avatar">
-        <img src="assets/icons/usuario.png" alt="Usuario">
-      </div>
-    </div>
-  </header>
+  </aside>
 
-  <div class="body-layout">
-    <aside class="sidebar">
-      <div class="profile-card">
-        <div class="profile-image">
-          <img src="assets/icons/usuario.png" alt="Administrador">
-        </div>
-        <h3>Administrador</h3>
-        <small>admin@yavirac.edu.ec</small>
-      </div>
 
-      <nav>
-        <a routerLink="/vinculacion" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: false }">
-          <span class="nav-icon"><img src="assets/icons/vinculacion.png" alt=""></span>
-          Vinculación
-        </a>
-        <a routerLink="/vinculacion/actividades" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
-          <span class="nav-icon"><img src="assets/icons/actividad.png" alt=""></span>
-          Actividades
-        </a>
-        <a routerLink="/vinculacion/asistencia" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
-          <span class="nav-icon"><img src="assets/icons/evaluacion.png" alt=""></span>
-          Asistencia tutor
-        </a>
-        <a routerLink="/vinculacion/informes" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
-          <span class="nav-icon"><img src="assets/icons/informe.png" alt=""></span>
-          Informes
-        </a>
-        <a routerLink="/vinculacion/nuevo" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
-          <span class="nav-icon"><img src="assets/icons/proyecto.png" alt=""></span>
-          Nuevo proyecto
-        </a>
-      </nav>
-    </aside>
 
-    <main class="content">
-      <section class="hero" *ngIf="title || subtitle">
-        <h2>{{ title }}</h2>
-        <p>{{ subtitle }}</p>
-      </section>
+  <main class="contenido">
 
-      <ng-content></ng-content>
-    </main>
-  </div>
+    <router-outlet></router-outlet>
+
+  </main>
+
 </div>
