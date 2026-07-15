@@ -38,7 +38,6 @@ import {
 
 
 
-
 export const routes: Routes = [
 
   // =====================================================
@@ -147,8 +146,6 @@ export const routes: Routes = [
       },
         // =====================================================
   // VINCULACIÓN
-  // LAYOUT INDEPENDIENTE
-  // =====================================================
 
       {
         path: 'vinculacion',
