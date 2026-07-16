@@ -1,19 +1,27 @@
 <div class="layout">
 
+  <!-- Sidebar -->
   <aside class="sidebar">
 
-    <h2>Sistema Académico</h2>
+    <div class="logo">
 
-    <div class="menu">
+  <img
+      src="/logo-yavirac.png"
+      alt="Yavirac"
+      class="logo-image">
 
-      <div class="menu-title">
-        Inicio
-      </div>
+</div>
 
-      <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
-        🏠 Bienvenida
+    <nav class="menu">
+
+      <div class="menu-title">Inicio</div>
+
+      <a routerLink="/"
+         routerLinkActive="active"
+         [routerLinkActiveOptions]="{exact:true}">
+        <span>🏠</span>
+        Bienvenida
       </a>
-
 
       <div class="menu-title">
         Portafolio Docente
@@ -22,19 +30,15 @@
       <a routerLink="/portafolio-docente"
          routerLinkActive="active"
          [routerLinkActiveOptions]="{exact:true}">
-
+        <span>📄</span>
         Informe Final
-
       </a>
 
       <a routerLink="/portafolio-docente/aceptacion-notas"
          routerLinkActive="active">
-
+        <span>✔</span>
         Aceptación de Notas
-
       </a>
-
-
 
       <div class="menu-title">
         Fase Práctica
@@ -43,47 +47,99 @@
       <a routerLink="/fase-practica"
          routerLinkActive="active"
          [routerLinkActiveOptions]="{exact:true}">
-
+        <span>📁</span>
         Catálogo Documentos
-
       </a>
 
       <a routerLink="/fase-practica/carta-compromiso"
          routerLinkActive="active">
-
+        <span>📄</span>
         Carta Compromiso
-
       </a>
 
       <a routerLink="/fase-practica/registro-asistencia"
          routerLinkActive="active">
-
+        <span>📅</span>
         Registro Asistencia
-
       </a>
-
-
 
       <div class="menu-title">
-        Otros módulos
-      </div>
+  Vinculación con la Sociedad
+</div>
 
-      <a routerLink="/vinculacion">
+<a routerLink="/vinculacion">
+  <span>🤝</span>
+  Vinculación
+</a>
 
-        Vinculación
+<a routerLink="/vinculacion/actividades">
+  <span>📋</span>
+  Actividades
+</a>
 
-      </a>
+<a routerLink="/vinculacion/asistencia-tutor">
+  <span>👨‍🏫</span>
+  Asistencia Tutor
+</a>
 
-    </div>
+<a routerLink="/vinculacion/informes">
+  <span>📑</span>
+  Informes
+</a>
+
+<a routerLink="/vinculacion/nuevo-proyecto">
+  <span>➕</span>
+  Nuevo Proyecto
+</a>
+
+    </nav>
 
   </aside>
 
+  <!-- Contenido -->
+  <div class="main-content">
 
+    <header class="topbar">
 
-  <main class="contenido">
+  <div class="topbar-left">
 
-    <router-outlet></router-outlet>
+    <span class="brand-icon">☀</span>
 
-  </main>
+    <h1>Instituto Superior Yavirac</h1>
+
+  </div>
+
+  <div class="topbar-right">
+
+    <button class="icon-btn">🔔</button>
+
+    <button class="icon-btn">💬</button>
+
+    <div class="user">
+
+      <div class="avatar">
+        <img src="/usuario.jpg" alt="Usuario">
+      </div>
+
+      <div class="user-info">
+        <span class="name">María José Pérez</span>
+        <span class="role">Docente</span>
+      </div>
+
+      <span class="arrow">⌄</span>
+
+    </div>
+
+  </div>
+
+</header>
+
+    <main class="contenido">
+
+      <router-outlet></router-outlet>
+
+    </main>
+
+  </div>
 
 </div>
